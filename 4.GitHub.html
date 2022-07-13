@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GH Documentación</title>
+  <link rel="stylesheet" href="./stylesGH.css">
+</head>
+
+<body>
+  
+  <div class="main__container">
+    <div>
+      <h1 class="class_indice">Indice</h1>
+      <ul class="indice">
+        <li> <a href="#1__"> 1. Instalar Git </a> </li>
+        <li> <a href="#2__"> 2. Introduccion a la Terminal y Linea de Comandos </a> </li>
+        <li> <a href="#3__"> 3. Qué es el staging y los repositorios </a> </li>
+        <li> <a href="#4__"> 4. Qué es un Branch (rama) y cómo funciona un Merge en Git </a> </li>
+        <li> <a href="#5__"> 5. Crea un repositorio de Git y has tu primer commit </a> </li>
+        <li> <a href="#6__"> 6. Analizar cambios en los archivos de tu proyecto con Git.txt </a> </li>
+        <li> <a href="#7__"> 7. Volver en el tiempo en nuestro repositorio utilizando reset y checkout </a> </li>
+        <li> <a href="#8__"> 8. Introducción a las ramas o branches de Git </a> </li>
+        <li> <a href="#9__"> 9. Resolución de conflictos al hacer un merge </a> </li>
+        <li> <a href="#10__"> 10. Uso de GitHub </a> </li>
+        <li> <a href="#11__"> 11. Configura tus llaves SSH en local </a> </li>
+        <li> <a href="#12__"> 12. Conexion a Github con SSH </a> </li>
+        <li> <a href="#13__"> 13. Tags y versiones en Git y GitHub </a> </li>
+        <li> <a href="#14__"> 14. Manejo de Ramas en GitHub </a> </li>
+        <li> <a href="#15__"> 15. Configurar múltiples colaboradores en un repositorio de GitHub </a> </li>
+        <li> <a href="#16__"> 16. Utilizando Pull Requests en GitHub </a> </li>
+        <li> <a href="#17__"> 17. Creando un Fork, contribuyendo a un repositorio </a> </li>
+        <li> <a href="#18__"> 18. Ignorar archivos en el repositorio con gitignore </a> </li>
+        <li> <a href="#19__"> 19. Tu sitio web público con GitHub Pages </a> </li>
+        <li> <a href="#20__"> 20. Git Rebase  reorganizando el trabajo realizado </a> </li>
+        <li> <a href="#21__"> 21. Git Stash Guardar cambios en memoria y recuperarlos después </a> </li>
+        <li> <a href="#22__"> 22. Git Clean limpiar tu proyecto de archivos no deseados </a> </li>
+        <li> <a href="#23__"> 23. Git cherry-pick traer commits viejos al head de un branch </a> </li>
+        <li> <a href="#24__"> 24. Reconstruir commits en Git con amend </a> </li>
+        <li> <a href="#25__"> 25. Git Reset y Reflog úsese en caso de emergencia </a> </li>
+        <li> <a href="#26__"> 26. Buscar en archivos y commits de Git con Grep y log </a> </li>
+        <li> <a href="#27__"> 27. Comandos y recursos colaborativos en Git y GitHub </a> </li>
+      </ul>
+    </div>
+    
+    <h1 class="class_indice segundo">Contenido</h1>
+    <div class="parrafos_padre">
+<!-- ________________________________________________________________________________________________ -->
+      <div class="parrafos">
+        <h1 id="1__">1. Instalar Git</h1>
+       
+        <ol class="parrafo_div">
+          <div class="">
+            <li>Ultima version: <a target="_blank" href="https://git-scm.com/downloads">Click</a></li>
+          </div>
+        </ol>
+      </div>
+
+<!-- ________________________________________________________________________________________________ -->
+      <div class="parrafos">
+        <h1 id="2__">2. Introduccion a la Terminal</h1>
+        <h2>Comandos básicos:</h2>
+        
+        <ol class="parrafo_div">
+          <div class="">
+            <li><strong>pwd</strong>: Ver ruta actual.</li>
+            <li><strong>mkdir</strong>: Crea una carpeta (mkdir nombre_carpeta).</li>
+            <li><strong>touch</strong>: Crear archivos (touch nombre_archivo).</li>
+            <li><strong>rm</strong>: Borrar un archivo o carpeta (rm archivo_a_borrar). Cuidado con este comando, puedo borrar incluso mi disco duro.</li>
+            <li><strong>cat</strong>: Ver contenido de un archivo (cat archivo_a_leer).</li>
+            <li><strong>ls</strong>: Muestra los archivos de la carpeta actual.</li>
+            <li><strong>ls</strong>: -a: Muestra absolutamente todos los archivos.</li>
+            <li><strong>ls</strong>: -al: Ver todos los archivos.</li>
+            <li><strong>ls</strong>: -l: Ver todos los archivos como una lista.</li>
+          </div>
+          
+          <div class="">
+            <li><strong>cd</strong>: Navegar entre carpetas.</li>
+            <li><strong>cd /</strong>: Ir a la ruta principal</li>
+            <li><strong>cd</strong> o <strong>cd ~</strong> : Ir a la ruta de tu usuario</li>
+            <li><strong>cd .. </strong>: Regresa una carpeta.</li>
+            <li><strong>history</strong>: Historial de comandos ejecutadis.</li>
+            <li><strong>!732</strong>: Ejecutaría el comando numero 732 mostrado en history.</li>
+            <li><strong>clear</strong>: limpia la terminal o Ctrl + L</li>
+            <li><strong>Tecla Tab</strong>: muestra predicciones posibles de carpetas o comandos;</li>
+            <li><strong>--help</strong>: Descubre todos los argumentos de un comando (cat --help).</li>
+          </div>
+        </ol>
+      </div>
+
+      
+<!-- ________________________________________________________________________________________________ -->
+      <!-- 
+      <div class="parrafos">
+        <h1 id=""> </h1>
+        <h2> </h2>
+        
+        <ol class="parrafo_div">
+          <div class="">
+            <li><strong> </strong> </li>
+          </div>
+          
+          <div class="">
+            <li><strong> </strong></li>
+          </div>
+        </ol>
+      </div>
+       -->
+     
+       <div class="parrafos">
+        <h1 id="3__">3. Qué es el staging y los repositorios</h1>
+        <h2>Iniciar un repositorio en git: (git init), este comando se encargará de 2 cosas:</h2>
+        
+        <ol class="parrafo_div">
+          <div class="">
+            <li>Crea una carpeta .git que guarda toda la base de datos con cambios atómicos del proyecto.</li>
+          </div>
+          
+          <div class="">
+            <li>Crea un área Staging, que guarda temporalmente mis archivos (cuando ejecute un cierto comando) y me permitirá, más adelante, guardar estos cambios en el repo (también con un comando).</li>
+          </div>
+        </ol>
+
+        <h1>3.1 Ciclo de vida o estados de los archivos en Git:</h1>
+        <ol class="parrafo_div">
+          <div class="">
+            <li><a target="_blank" href="https://platzi.com/tutoriales/1557-git-github/6242-4-estados-del-ciclo-de-vida-de-archivos-git/">Click</a></li>
+          </div>
+        </ol>
+
+        <h1>3.2 Comandos para mover archivos entre los estados de Git:</h1>
+        <ol class="parrafo_div">
+          <div class="">
+            <li>git status: ver el estado de mis archivos/carpetas.</li>
+            <li>git add: Ayuda a mover archivos del Untracked o Unstaged al estado Staged.</li>
+            <li>-- git add nameFile : agrega archivos/carpetas individuales</li>
+            <li>-- git add -A : mueve todos los archivos del proyecto (Untrackeds o unstageds).</li>
+            <li>git reset HEAD: ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.</li>
+          </div>
+
+          <div class="">
+            <li>git commit: ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardados o actualizados en el repo. git commit -m "mensaje"</li>
+            <li>git rm: este comando necesita alguno de los siguientes argumentos para poder ejecutarse:</li>
+            <li>-- git rm --cached: Mueve los archivos que le indiquemos al estado Untracked.</li>
+            <li>-- git rm --force: Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).</li>
+          </div>
+        </ol>
+      </div>
+      </div>
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="4__">4. Qué es un Branch (rama) y cómo funciona un Merge en Git</h1>
+        <ol class="parrafo_div">
+          <div class="">
+            <li>Git: base de datos muy precisa con todos los cambios y crecimiento que ha tenido mi proyecto. Los commits son la única forma de tener un registro de los cambios. Pero las ramas amplifican mucho más el potencial de Git.</li>
+            <li>Todos los commits se aplican sobre una rama. Por defecto, inicio en la rama master(se puede cambiar el nombre) y creo nuevas ramas a partir de esta, para crear flujos de trabajo independientes.</li>
+            <li>Los equipos de desarrollo tienen un estándar: Todo lo que esté en la rama master va a producción, las nuevas features, características y experimentos van en una rama “development” (para unirse a master cuando estén definitivamente listas) y los issues o errores se solucionan en una rama “hotfix” para unirse a master tan pronto como sea posible.</li>
+          </div>
+
+          <div class="">
+            <li>Crear una nueva rama lo conocemos como Checkout. Unir dos ramas lo conocemos como Merge.</li>
+            <li>Puedo crear todas las ramas y commits que quiera. De hecho, puedo aprovechar el registro de cambios de Git para crear ramas, traer versiones viejas del código, arreglarlas y combinarlas de nuevo para mejorar el proyecto.</li>
+            <li>Solo ten en cuenta que combinar estas ramas puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir estos cambios automáticamente, pero no siempre funciona. En algunos casos, nosotros debemos resolver estos conflictos “a mano”.</li>
+          </div>
+        </ol>
+      </div>
+         -->
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="5__">5. Crea un repositorio de Git y has tu primer commit</h1>
+        <ol class="parrafo_div">
+          <div class="">
+            <li>git init: en la carpeta que vamos a trabajar</li>
+            <li>-- ls -al: ver todas las carpetas</li>
+          </div>
+          <div class="">
+            <li>-- code: abre vscode</li>
+          <li>-- code archivo.js: abre ese archivo.</li>
+          </div>
+        </ol>
+
+        <ol class="parrafo_div">
+          <div class="">
+            <li>git status: Ver el estado de mis archivos</li>
+          </div>
+          <div class="">
+            <li>git add nombrearchivo: agrega archivo en especifico</li>
+          </div>
+        </ol>
+
+        <ol class="parrafo_div">
+          <div class="">
+            <li>Una de estas dos opciones por si quiero revertir el add.</li>
+            <li>-- git rm nombrearchivo: aun no elimina el archivo, pero debo decirle que hacer con el, si agregarlo o eliminarlo</li>
+          </div>
+          <div class="">
+            <li>-- git rm --cached nombrearchivo: cached significa que esta guardado aun en memoria ram, usamos este para quitarle el 'add' es para revertir</li>
+          </div>
+        </ol>
+
+        <ol class="parrafo_div">
+          <div class="">
+            <li>Podría usar una de estas dos opciones por si quiero subir los cambios ya al repo.</li>
+            <li>-- git commit: commit sin mensaje</li>
+          </div>
+          <div class="">
+            <li>-- git commit -m "mensaje": sube el commit con un mensaje caracteristico.</li>
+          </div>
+        </ol>
+
+        <ol class="parrafo_div">
+          <li>Cambiar configuracion del usuario de git.</li>
+          <li>-- git config: Para ver todas las configuraciones que tiene git</li>
+          <li>-- git config --list: para ver la configuracion por defecto</li>
+          <li>-- git config --global user.name "myName": registra mi nombre en git</li>
+          <li>-- git config --global user.email "correo@gmail.com": registra correo</li>
+        </ol>
+        <ol class="parrafo_div"><li>git log: Ver commits hechos.</li></ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+     <!--  <div class="parrafos">
+        <h1 id="6__">6. Analizar cambios en los archivos de tu proyecto con Git.txt</h1>
+        <ol class="parrafo_div">
+          <li>git show nameFile: muestra los cambios que han existido sobre un archivo.</li>
+          <li>git commit: cuando hacemos un commit sin mensaje, abre la consola de vim</li>
+          <li>-- Si no deja escribir, pulso 'Esc' + 'i' y dejará insertar texto, para escribir un commit.</li>
+          <li>-- Salgo del editor de texto vim, 'Shift' + 'z' + 'z' y guarda mi mensaje (no se puede enviar un commit vacío)</li>
+          <li>git diff hashCommit otroHashCommit: muestra la diferencia entre dos commits.</li>
+          <li>git log nombrearchivo</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="7__">7. Volver en el tiempo en nuestro repositorio utilizando reset y checkout</h1>
+        <ol class="parrafo_div">
+          <li>git reset commitAntiguo --soft: Regresar a la version anterior.</li>
+          <li>-- soft deja las cosas en staging, para poder commitearlo la proxima vez.</li>
+          <li>git reset commitAntiguo --hard: TODO vuelve a su estado anterior, borra commits que se hicieron desde este commit en adelante.</li>
+          <li>git log --stat: ver cambios a partir del commit</li>
+          <li>git checkout hashCommit nombreArchivo: Pasa a los cambios de ese commit, puede ser un commit muy antiguo, pero aun no estan borrados los cambios mas recientes, a no ser que hagamos un commit;</li>
+          <li>git checkout master nombreArchivo: Regresa al commit actual de nuestro proyecto.</li>
+          <li>Salir de (END) prueba con la 'q'</li>
+          <li>Recomendacion: cuando estén renombrando archivos o cambiando ubicación de los archivos dentro del repositorio, utilicen el comando: git mv</li>
+          <li>-- Si lo hacen de la forma habitual, se pierde el tracking que hace git y después se pueden generar bastantes conflictos.</li>
+          <li>--- Un ejemplo sería: git mv nameactual.txt namenuevo.txt</li>
+        </ol>
+        <h2>Git reset vs Git rm: Git reset y git rm son comandos con utilidades muy diferentes.</h2>
+        <ol class="parrafo_div">
+          <li>git rm: Eliminar archivos de git sin eliminar su historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de borrar el archivo en cuestión.</li>
+          <li>-- git rm no puede usarse así nomás. Debemos usar uno de los flags para indicarle a Git cómo eliminar los archivos que ya no necesitamos en la última versión del proyecto:</li>
+          <li>--- -git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.</li>
+          <li>--- -git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).</li>
+        </ol>
+        <ol class="parrafo_div">
+          <li>git reset: Volver en el tiempo. Pero no como git checkout que deja ir, mirar, volver. con reset voy al pasado sin la posibilidad de volver al futuro. Borra la historia y la debe sobreescribir, no hay vuelta atrás.</li>
+          <li>-- Comando muy peligroso y debe usarlo en caso de emergencia. debe usar alguna de estas dos opciones:</li>
+          <li>--- git reset --soft: Borra todo el historial y los registros de Git pero guardamos cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.</li>
+          <li>--- git reset --hard: Borra TODO. info de commits...</li>
+        </ol>
+        <ol class="parrafo_div">
+          <li>Aun falta: git reset HEAD: Sacar archivos del Staging. No para borrarlos, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add.</li>
+          <li>-- ¿Por qué esto es importante?</li>
+          <li>--- Imagina lo siguiente: -Hago cambios en un proyecto para una actualización. Todos los archivos con cambios se mueven al área de staging con el comando git add. Pero te das cuenta de que uno de esos archivos no está listo todavía. Actualizaste el archivo pero ese cambio no debe ir en el próximo commit por ahora.</li>
+          <li>-- ¿Qué puedo hacer?</li>
+          <li>--- Todos los cambios están en Staging, incluido el archivo con los cambios que no están listos. Esto significa que debemos sacar ese archivo de Staging para poder hacer commit de todos los demás.</li>
+          <li>--- Al usar git rm lo que haremos será eliminar este archivo completamente de git. Todavía tendré el historial de cambios de este archivo, con la eliminación del archivo como su última actualización. Recuerda que en este caso no buscábamos eliminar un archivo, solo dejarlo como estaba y actualizarlo después, no en este commit.</li>
+          <li>--- En cambio, si usamos git reset HEAD, lo único que haremos será mover estos cambios de Staging a Unstaged. Seguiremos teniendo los últimos cambios del archivo, el repositorio mantendrá el archivo (no con sus últimos cambios pero sí con los últimos en los que hicimos commit) y no habremos perdido nada.</li>
+          <li>--- Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de todos los comandos de Git.</li>
+        </ol>
+
+        <h2>Algunos comandos que pueden ayudar cuando colaboren con proyectos muy grandes de github:</h2>
+        <ol class="parrafo_div">
+          <li>git log --oneline - Te muestra el id commit y el título del commit.</li>
+          <li>git log --decorate- Te muestra donde se encuentra el head point en el log.</li>
+          <li>git log --stat - Explica el número de líneas que se cambiaron brevemente.</li>
+          <li>git log -p- Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.</li>
+          <li>git shortlog - Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.</li>
+          <li>git log --graph --oneline --decorate y</li>
+          <li>git log --pretty=format:"%cn hizo un commit %h el dia %cd" - Muestra mensajes personalizados de los commits.</li>
+          <li>git log -3 - Limitamos el número de commits.</li>
+          <li>git log --after=“2018-1-2” ,</li>
+          <li>git log --after=“today” y</li>
+          <li>git log --after=“2018-1-2” --before=“today” - Commits para localizar por fechas.</li>
+          <li>git log --author=“Name Author” - Commits realizados por autor que cumplan exactamente con el nombre.</li>
+          <li>git log --grep=“INVIE” - Busca los commits que cumplan tal cual está escrito entre las comillas.</li>
+          <li>git log --grep=“INVIE” –i- Busca los commits que cumplan sin importar mayúsculas o minúsculas.</li>
+          <li>git log – index.html- Busca los commits en un archivo en específico.</li>
+          <li>git log -S “Por contenido”- Buscar los commits con el contenido dentro del archivo.</li>
+          <li>git log > log.txt - guardar los logs en un archivo txt</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="8__">8. Introducción a las ramas o branches de Git</h1>
+        <ol class="parrafo_div">
+          <li>git commit -am "mensaje": add + commit, solo sirve con archivos que alguna vez tuvieron un add.</li>
+          <li>git commit -a: es lo mismo que arriba, pero dirige al editor vim para escribir el mensaje.</li>
+          <li>git branch nombreRama: Crea una nueva rama, puedo verificarlo con git show aparecera (HEAD -> master, nombreRama)</li>
+          <li>git checkout nombreRama: para cambiarnos a la rama previamente creada</li>
+          <li>git checkout -b "nombreRama": crea rama y pasa a ella.</li>
+          <li>git branch: ver ramas existentes.</li>
+          <li>git merge nombre_otraRama: merge entre 2 ramas, me ubico en la rama que quiero que sea principal, para pegar a ella la rama secundaria, luego del merge, se pueden ver los commits que tenian la rama fusionada, es decir estaran los commits de la rama master + los de la rama pegada.</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="9__">9. Resolución de conflictos al hacer un merge</h1>
+        <ol class="parrafo_div">
+          <li>Git nunca borra nada a menos que se le indique. Cuando uso los comandos git merge o git checkout estoy cambiando de rama o creando un nuevo commit, no borrando ramas ni commits (recuerda: borrar commits con git reset y ramas con git branch -d).</li>
+          <li>Git es muy inteligente y puede resolver algunos conflictos automáticamente: cambios, nuevas líneas, etc. Pero a veces no sabe cómo resolver las diferencias, Ej: cuando 2 ramas diferentes hacen cambios distintos a una misma línea.</li>
+          <li>Esto se conoce como conflicto y lo puede resolver manualmente, solo debe hacer el merge, ir al editor de código y elegir si quiero quedarme con alguna de las 2 versiones o algo diferente. Algunos editores de código como VSCode nos ayudan a resolver estos conflictos sin necesidad de borrar o escribir líneas de texto, basta con hundir un botón y guardar el archivo.</li>
+          <li>Recuerda que siempre debe crear un nuevo commit para aplicar los cambios del merge. Si Git puede resolver el conflicto hará commit automáticamente. Pero, en caso de no pueda resolverlo, debe solucionarlo y hacer el commit.</li>
+          <li>Los archivos con conflictos por el comando git merge entran en un nuevo estado que conocemos como Unmerged. Funcionan muy parecido a los archivos en estado Unstaged, algo así como un estado intermedio entre Untracked y Unstaged, solo debe ejecutar git add para pasarlos al área de staging y git commit para aplicar los cambios en el repositorio.</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="10__">10. Uso de GitHub</h1>
+        <ol class="parrafo_div">
+          <li>-Crea un repo en GitHub, (readme para explicar el proyecto).</li>
+          <li>-Copia el link del repo, (boton verde), opcion de HTTPS.</li>
+          <li>-En Git Bash me ubico en la carpeta donde llevo mi proyecto.</li>
+          <li>-git remote add origin link-repositorio.</li>
+          <li>-git push origin master: digo a git que envie al origen, la rama master.</li>
+          <li>-git pull origin master: descarga lo que haya en mi proyecto de GitHub.</li>
+          <li>-git pull origin master --allow-unrelated-histories: para casos donde se deban fusionar objetos de github con mi rama. https://www.educative.io/edpresso/the-fatal-refusing-to-merge-unrelated-histories-git-error.</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="11__">11. Configura tus llaves SSH en local</h1>
+        <ol class="parrafo_div">
+          <li>ssh-keygen -t rsa -b 4096 -C "manuelinperez@gmail.com"</li>
+          <li>-- t: algoritmo que usaré para crear esa llave, rsa es el algoritmo mas popular(segun el video de hace años)</li>
+          <li>-- b: que tan compleja sera la llave, 4096 es la complejidad de la llave desde una perspectiva matemática.</li>
+          <li>-- C  es a que correo electronico estara conectada esta llave.</li>
+          <li>Aparecera un mensaje de generendo llave, y luego:</li>
+          <li>-- Enter file in which to save the key (/c/Users/Admin/.ssh/id_rsa): donde deberia guardar la llave; si le doy enter, la guardara en la ruta que aparece.</li>
+          <li>Luego: Enter passphrase (empty for no passphrase): Para poner una contrasena con espacios; Si doy enter, no la pondrá.</li>
+          <li>Veo si el proceso corre: eval $(ssh-agent -s) trae algo así Agent pid 1111; Ó ssh-add ~/.ssh/id_rsa</li>
+          <li>Ahora la agregamos ssh-add ~/aquiNombreDeLaKey lo importante es recordar ssh-add pues el resto es la direccion de donde esta guardada la llave</li>
+          <li>Listo, ya creamos nuestro entorno local</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="12__">12. Conexion a Github con SSH</h1>
+        <ol class="parrafo_div">
+          <li>Copiar llave publica, ir a settings de Github, SSH and GPG keys, crear nueva llave, pon un titulo, y pega la llave.</li>
+          <li>Luego de vincular, voy a cualquier repo y copio el link, ya no HTTPS, sino en SSH.</li>
+          <li>En Git Bash voy a la carpeta del proyecto</li>
+          <li>-- git remote -v : para ver mi repo.</li>
+          <li>-- git remote set-url origin nuevaUrl : cambiar url del repo.</li>
+          <li>Podria hacer algún cambio en el proyecto, para verificar, pero primero:</li>
+          <li>traigo la informacion con git pull, le doy [yes] (Nota: Es bueno leer los mensajes que arroje git)</li>
+          <li>Dice que debo especificar algunas cosas:</li>
+          <li>--  git pull origin master: traigo origin del remoto y lo fusiono con master.</li>
+          <li>Despues si hago un cambio en el proyecto, lo subo con git push origin master</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="13__">13. Tags y versiones en Git y GitHub</h1>
+        <ol class="parrafo_div">
+          <li>git log --all --graph --decorate --oneline: Veo el resumen de todos los commits incluso los hash son version corta.</li>
+          <li>-- Le puedes poner un alias para que sea mas corto:</li>
+          <li>--- alias tree="git log --all --graph --decorate --oneline" : alias=alias, tree=aliasQueResumeComando</li>
+          <li>git tag -a v0.1 -m "Resultado de las primeras clases del curso" 2178a83 : digo que sera un tag -a=voy a agregar un tag) v0.1=nombreTag -m""=mensajeParaTag 2178a83=hashDelCommit.</li>
+          <li>git tag: muestra los tags que tenemos</li>
+          <li>git show v1.4 : ver info de ese tag</li>
+          <li>Lo mejor es hacer un git pull origin master y luego enviar los tags a GitHub</li>
+          <li>git push origin --tags: empujar a origin, los tags que creé.</li>
+          <li>Se pueden ver los tags en GitHub al lado de donde aparecen las ramas.</li>
+          <li>git tag -d nombreTag : borrar el tag. Ese tag no se borra de GitHub</li>
+          <li>git push origin :refs/tags/nombreTag : borra el tag 'nombreTag' de GitHub.</li>
+          <li>comentarios:</li>
+          <li>-- Ejecutan este comando en la terminal y queda guardado en los alias pero de git. con esto se puede ejecutar cada que se escribe git superlog</li>
+          <li>--- git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</li>
+          <li>-- Para que sus bonitos alias no se les borren, como a mi. 😁</li>
+          <li>--- Vayan a la carpeta C:/Usuarios/su_usuario</li>
+          <li>--- Revisen que esté el archivo .bashrc o créenlo desde la consola con touch .bashrc y dentro guarden sus alias de la siguiente manera. Yo lo edité en VS Code</li>
+          <li>--- Cierren todas sus instancias de Git Bash que tengan abiertas y ¡listos!</li>
+          <li># ----------------------</li>
+          <li># Git Command Aliases</li>
+          <li># ----------------------</li>
+          <li>alias ga='git add'</li>
+          <li>alias arbol='git log --all --oneline --graph --decorate'</li>
+          <li>alias branches='git branch -l'</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+     <!--  <div class="parrafos">
+        <h1 id="14__">14. Manejo de Ramas en GitHub</h1>
+        <ol class="parrafo_div">
+          <li>git show-branch : Muestra ramas existentes y su historia</li>
+          <li>git show-branch --all : Muestra lo mismo que arriba + mas datos</li>
+          <li>gitk : Muestra informacion mas grafica/visual de las ramas y su historia</li>
+          <li>git push origin nombreDeOtraRama : sube otra rama que quiera</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+     <!--  <div class="parrafos">
+        <h1 id="15__">15. Configurar múltiples colaboradores en un repositorio de GitHub</h1>
+        <ol class="parrafo_div">
+          <li>Clonar un repositorio, voy al repositorio que quiera, al boton verde y copio el link.</li>
+          <li>en Git Bash, git clone linkDelRepo.</li>
+          <li>Puede hacer algun cambio al proyecto, y hacer un add y commit.</li>
+          <li>Ver que ramas hay, solo traerá la master.</li>
+          <li>git log nos mostrara los commit hechos en ese repo.</li>
+          <li>Al hacer un git push origin master se denega el permiso, ya que debe ser miembro. El dueño del repo debe agregarlo como miembro.</li>
+          <li>El dueño del repo debe ir a los settings del repo, Manage acces, y ahi escribir el nombre de usuario o correo.</li>
+          <li>Luego de ser miembro, ya puede empezar a hacer colaboracione</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="16__">16. Utilizando Pull Requests en GitHub</h1>
+        <ol class="parrafo_div">
+          <li>Pull request: Funcionalidad de github (gitlab: merge request, bitbucket: push request), en la que un colaborador pide que revisen sus cambios antes de hacer merge a una rama.</li>
+          <li>Al hacer un pull request se genera una conversación que pueden seguir los demás usuarios del repositorio, así como autorizar y rechazar los cambios.</li>
+          <li>El flujo del pull request es el siguiente</li>
+          <li>--  Se trabaja en una rama paralela los cambios que se desean (git checkout -b rama)</li>
+          <li>--  Se hace un commit a la rama (git commit -am 'Comentario')</li>
+          <li>--  Se suben al remoto los cambios (git push origin rama)</li>
+          <li>--  En GitHub se hace el pull request comparando la rama master con la rama del fix.</li>
+          <li>--  Uno, o varios colaboradores revisan que el código sea correcto y dan feedback (en el chat del pull request)</li>
+          <li>--  El colaborador hace los cambios que desea en la rama y lo vuelve a subir al remoto (automáticamente jala la historia de los cambios que se hagan en la rama, en remoto)</li>
+          <li>--  Se aceptan los cambios en GitHub</li>
+          <li>--  Se hace merge a master desde GitHub</li>
+          <li>Importante: Cuando se modifica una rama, también se modifica el pull request</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="17__">17. Creando un Fork, contribuyendo a un repositorio</h1>
+        <ol class="parrafo_div">
+          <li>Click en fork del repo que me guste.</li>
+          <li>en a la consola: git clone link_copiado</li>
+          <li>cuando hay una sola rama, se puede hacer git push, pues solo hay una.</li>
+          <li>recuerda que mientras el repo original vaya haciendo cambios, debes traerlos al clon, para no quedar desactualizado.</li>
+          <li>Puedes ver desde la seccion "code" un texto que dice:</li>
+          <li>-- "This branch is 4 commits behind dueñodelrepo:master" significa que tenemos 4 commits detras del dueño del repo</li>
+          <li>-- los puedo comparar, al hacerlo saldra que no se puede, porque esta comparando de mi repo al original, deberia ser al reves.</li>
+          <li>-- Se puede dar en el link "switching the base" y mostrará los cambios.</li>
+          <li>-- Para solucionarlo, puedes darle en "Create pull request" o desde consola.</li>
+          <li>-- consola: Crea otra fuente para hacer pull, ve al proyecto original y copia el link, git remote add upstream link_copiado (upstream: nombre que quiera colocar, es como el origin)</li>
+          <li>-- si doy git remote -v puedes ver esa rama nueva llamada upstream y ya deberia poder hacergit pull de mi upstream a mi rama master (git pull upstream master)  </li>
+          <li>-- git add, commit y push origin master</li>
+          <li>-- Listo! Ya deberia estar guardado y actualizado</li>
+          <li>Comentario:</li>
+          <li>Forks/Bifurcaciones:</li>
+          <li>Característica única de GitHub en la que se crea una copia exacta del estado actual de un repo directamente en GitHub, este repo podrá servir como otro origen y se podrá clonar (como cualquier otro repo), en pocas palabras, lo puede utilizar como un git cualquiera.</li>
+          <li>Un fork es una bifurcación del repo completo, tiene una historia en común, pero de repente se bifurca y pueden variar los cambios, ya que ambos proyectos podrán ser modificados en paralelo y para estar al día un colaborador tendrá que estar actualizando su fork con la información del original. </li>
+          <li>Al hacer fork de un poryecto en GitHub, te conviertes en dueño del repo fork, puedes trabajar en este con todos los permisos, pero es un repo completamente diferente que el original, teniendo alguna historia en común.</li>
+          <li>Los forks son importantes porque es la manera en la que funciona el open source, pues una persona puede no ser colaborador de un proyecto, pero puede contribuír al mismo.</li>
+          <li>Al hacer un fork, GitHub sabe que se hizo el fork del proyecto, por lo que se le permite al colaborador hacer pull request desde su repo propio.</li>
+          <li>Cuando trabajas en un proyecto que existe en diferentes repos remotos (normalmente a causa de un fork) es muy probable que desees poder trabajar con ambos repos, para ésto puedes crear un remoto adicional desde consola.</li>
+          <li>--  git remote add nombreDelRemoto urlDelRemoto</li>
+          <li>--  git remote upstream https://github.com/freddier/hyperblog</li>
+          <li>--  Al crear un remoto adicional podré, hacer pull desde el nuevo origen (si tienes permisos puedes hacer fetch y push)</li>
+          <li>--  git pull remoto rama</li>
+          <li>--  git pull upstream master</li>
+          <li>Este pull traerá los cambios del remoto, por lo que estará al día en el proyecto, el flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.</li>
+          <li>git pull upstream master</li>
+          <li>git push origin master</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+     <!--  <div class="parrafos">
+        <h1 id="18__">18. Ignorar archivos en el repositorio con gitignore</h1>
+        <ol class="parrafo_div">
+          <li>crear un archivo llamado .gitignore</li>
+          <li>-- Ej de uso: *.jpg : ignore todos los archivos .jpg</li>
+          <li>Notas: </li>
+          <li>-- Readme.md es buena practica, un buen editor de readme: https://pandao.github.io/editor.md/en.html </li>
+          <li>-- Subir los archivos pesados como imagenes y videos, a alojamientos y linkar, no subirlo a github</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+    <!--   <div class="parrafos">
+        <h1 id="19__">19. Tu sitio web público con GitHub Pages</h1>
+        <ol class="parrafo_div">
+          <li>https://pages.github.com/ Lee las instrucciones.</li>
+          <li>Creas un repo, clonas, entras y creamos un html -- vim index.html con algun codigo</li>
+          <li>http://miguesc2.github.io/ voy a setting del repo, bajo a la seccion de GitHub Pages</li>
+          <li>Escoge master, y guardas, dará el link de mi pagina.</li>
+          <li>Para que cargue desde mi raiz, debo cambiar el nombre del repo a algo asi: nombredeusuario.github.io</li>
+          <li>algunos portafolios de los comments:  </li>
+          <li>-- https://iamdulce.github.io/portfolio/</li>
+          <li>-- https://mistyblunch.github.io/</li>
+          <li>-- https://mhsantosp.github.io/dai_clover/</li>
+        </ol>
+      </div> -->
+      
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="20__">20. Git Rebase  reorganizando el trabajo realizado</h1>
+        <ol class="parrafo_div">
+          <li>Mala practica**</li>
+          <li>Git rebase recopila uno a uno los cambios confirmados en una rama, y reaplicarlos sobre otra. Utilizar rebase nos </li>
+          <li>puede ayudar a evitar conflictos siempre que se aplique sobre commits que están en local y no han sido subidos a ningún repositorio remoto.</li>
+          <li>Comment: </li>
+          <li>-- rebase reescribe la historia del repositorio, cambia la historia de donde comenzó la rama y solo debe ser usado de manera local.</li>
+          <li>-- Si estoy ubicado en la rama que quiero unir, podré hacer este código, ejemplo, estoy ubicado en la rama "experimento" pues estando en esa rama haré git rebase master para copiar la informacion a master</li>
+          <li>-- luego si quiero, puedo pasar a rama master y hacer git rebase experimento, para traer la info de esa rama.</li>
+          <li>-- Viendo la historia de sus commits, aparecerá que mi rama experimento ha existido, pero ha tenido siempre la misma informacion de master, es decir, es como si no hubiera pasado nada fuera de la rama master,</li>
+          <li>--- PERO, en realidad pudimos haber hecho cambios en la otra rama.</li>
+          <li>--- git branch -D experimento borraria esa rama que antes usamos, pero ya mi informacion esta en master, asi que "no paso nada"</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+     <!--  <div class="parrafos">
+        <h1 id="21__">21. Git Stash Guardar cambios en memoria y recuperarlos después</h1>
+        <ol class="parrafo_div">
+          <li>Stashed: lista de estados que guarda algunos cambios que hizo en Staging para poder cambiar de rama sin perder el trabajo que todavía no guardamos en un commit.</li>
+          <li>útil porque a veces no se permite cambiar de rama, ésto porque tienes cambios sin guardar, y no siempre es un cambio lo suficientemente bueno como para hacer un commit pero no quieres perder ese código.</li>
+          <li>El stashed permite cambiar de ramas, hacer cambios, trabajar en otras cosas y, más adelante, retomar el trabajo con los archivos que tenías en Staging pero que podemos recuperar ya que los guardaste en el Stash.</li>
+          <li>git stash: guarda el trabajo actual del Staging en una lista diseñada para ser temporal llamada Stash, para que pueda ser recuperado en el futuro.   </li>
+          <li>Puede poner un mensaje en el stash, para asi diferenciarlos en git stash list por si tienes varios elementos en el stash : git stash save "mensaje"</li>
+          <li>Obtener elelmentos del stash: El stashed se comporta como una Stack de datos comportándose de manera tipo LIFO (Last In, First Out, «último en entrar, primero en salir»), así puedes acceder al método pop.</li>
+          <li>-- pop: recuperará y sacará de la lista el último estado del stashed y lo insertará en el staging area, por lo que es importante saber en qué branch te encuentras para poder recuperarlo, ya que el stash será agnóstico a la rama o estado en el que te encuentres, siempre recuperará los cambios que hiciste en el lugar que lo llamas.</li>
+          <li>Para recuperar los últimos cambios desde el stash a tu staging area: git stash pop</li>
+          <li>Para aplicar los cambios de un stash específico y eliminarlo del stash: git stash pop stash@{< num_stash >}</li>
+          <li>Para retomar los cambios de una posición específica del Stash: git stash apply stash@{< num_stash >}</li>
+          <li>-- Donde el < num_stash > lo obtienes desde el git stash list</li>
+          <li>Para ver la lista de cambios guardados en Stash y poder recuperarlos o hacer algo con ellos: git stash list</li>
+          <li>Retomar los cambios de una posición específica del Stash || Aplica los cambios de un stash específico</li>
+          <li>Para crear una rama y aplicar el stash mas reciente: git stash branch < nombreDeLaRama ></li>
+          <li>Si deseas crear una rama y aplicar un stash específico (obtenido desde git stash list): git stash branch nombre_de_rama stash@{< num_stash >}</li>
+          <li>Al utilizar estos comandos crearás una rama con el nombre < nombreDeLaRama >, te pasarás a ella y tendrás el stash especificado en tu staging area.</li>
+          <li>Para eliminar los cambios más recientes dentro del stash (el elemento 0): git stash drop</li>
+          <li>Si en cambio conoces el índice del stash que quieres borrar (mediante git stash list): git stash drop stash@{< num_stash >}</li>
+          <li>-- Donde el < num_stash > es el índice del cambio guardado.</li>
+          <li>Si en cambio deseas eliminar todos los elementos del stash: git stash clear</li>
+          <li>Consideraciones:</li>
+          <li>-- El cambio más reciente (al crear un stash) SIEMPRE recibe el valor 0 y los que estaban antes aumentan su valor.</li>
+          <li>-- Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con git add [nombre_archivo] con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando git stash -u (que guardará en el stash los archivos que no estén en el staging).</li>
+          <li>-- Al aplicar un stash este no se elimina, es buena práctica eliminarlo.</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="22__">22. Git Clean limpiar tu proyecto de archivos no deseados</h1>
+        <ol class="parrafo_div">
+          <li>git clean: borra documentos copiados, pero debes usarlo con otro atributo.</li>
+          <li>-- git clean --dry-run : Ver que archivos iré a borrar.</li>
+          <li>-- git clean -f : borra esos archivos</li>
+          <li>-- ya que Git ignora carpetas, la carpeta copiada debes borrarla a mano.</li>
+          <li>Si tambien hay imagenes que son copias, o cualquier tipo de archivo... Si estan en .gitignore no se borraran.</li>
+          <li>Comentario: El parametro -d ayuda con el borrado de carpetas untracked. Por ejemplo: git clean -df hubiera borrado la carpeta “css - copia"</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="23__">23. Git cherry-pick traer commits viejos al head de un branch</h1>
+        <ol class="parrafo_div">
+          <li>Mala practica</li>
+          <li>has una modificacion a un archivo, y hazle stash, luego has un git stash branch nuevarama, en esa nueva rama has el add y commit</li>
+          <li>ve a master y escribe git cherry-pick numeroDeCommit  (numeroDeCommit numero del commit que quiera traer de otra rama)</li>
+          <li>Y si quieres puedes unir el master a la rama numeroDeCommit</li>
+          <li>-- desde master: git merge numeroDeCommit</li>
+          <li>-- Si trae un conflicto, escoges con que cambio quedarte, y listo.</li>
+          <li>Comentario:</li>
+          <li>-- Este comando permite coger uno o varios commits de otra rama sin tener que hacer un merge completo. Gracias a cherry-pick, podrías aplicar los commits relacionados con nuestra funcionalidad de Facebook en nuestra rama master sin necesidad de hacer un merge.</li>
+          <li>-- Para demostrar cómo utilizar git cherry-pick, suponga que tiene un repositorio con el siguiente estado de rama:</li>
+          <li>a - b - c - d   Master</li>
+          <li style="margin-left: 60px;">         \</li>
+          <li style="margin-left: 70px;">           e - f - g Feature</li>
+          <li>-- El uso de git cherry-pick es sencillo y se puede ejecutar de la siguiente manera: git checkout master.</li>
+          <li>-- En este ejemplo, commitSha es una referencia de confirmación. Puedes encontrar una referencia de confirmación utilizando el comando git log. En este caso, imaginemos que queremos utilizar la confirmación ‘f’ en la rama master. Para ello, primero debemos asegurarnos de que estamos trabajando con esa rama master: git cherry-pick f</li>
+          <li>-- Una vez ejecutado, el historial de Git se verá así:</li>
+          <li>a - b - c - d - f   Master</li>
+          <li style="margin-left: 60px;">\</li>
+          <li style="margin-left: 70px;">e - f - g Feature</li>
+          <li>-- La confirmación f se ha sido introducido con éxito en la rama de funcionalidad</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="24__">24. Reconstruir commits en Git con amend</h1>
+        <ol class="parrafo_div">
+          <li>git commit --amend : une los cambios que olvidas subir, en caso de que hayas hecho algun cambio y lo olvides agregar en el commit, subira esos cambios al commit.</li>
+          <li>Resumen: si haces commit, pero olvidas agregar un cambio, pues hacemos el add de los cambios, y luego usamos git commit --amend, abre la consola de vim, y dejo el mismo mensaje si quiero.</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="25__">25. Git Reset y Reflog úsese en caso de emergencia</h1>
+        <ol class="parrafo_div">
+          <li>Comentario:</li>
+          <li>-- Git nunca olvida, git reflog</li>
+          <li>-- Git guarda todos los cambios aunque decidas borrarlos, al borrar un cambio lo que estás haciendo sólo es actualizar la punta del branch, para gestionar éstas puntas existe un mecanismo llamado registros de referencia o reflogs.</li>
+          <li>-- La gestión de estos cambios es mediante los hash’es de referencia (o ref) que son apuntadores a los commits.</li>
+          <li>-- Los recoges registran cuándo se actualizaron las referencias de Git en el repositorio local (sólo en el local), por lo que si deseas ver cómo has modificado la historia puedes utilizar el comando:</li>
+          <li>-- git reflog</li>
+          <li>-- Muchos comandos de Git aceptan un parámetro para especificar una referencia o “ref”, que es un puntero a una confirmación sobre todo los comandos:</li>
+          <li>--- git checkout Puedes moverte sin realizar ningún cambio al commit exacto de la ref</li>
+          <li>--- git checkout eff544f</li>
+          <li>--- git reset: Hará que el último commit sea el pasado por la ref, usar este comando sólo si sabes exactamente qué estás haciendo</li>
+          <li>--- git reset --hard eff544f # Perderá todo lo que se encuentra en staging y en el Working directory y se moverá el head al commit eff544f</li>
+          <li>--- git reset --soft eff544f # Te recuperará todos los cambios que tengas diferentes al commit eff544f, los agregará al staging area y moverá el head al commit eff544f</li>
+          <li>--- git merge: Puedes hacer merge de un commit en específico, funciona igual que con una branch, pero te hace el merge del estado específico del commit mandado</li>
+          <li>--- git checkout master</li>
+          <li>--- git merge eff544f # Fusionará en un nuevo commit la historia de master con el momento específico en el que vive eff544f</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="26__">26. Buscar en archivos y commits de Git con Grep y log</h1>
+        <ol class="parrafo_div">
+          <li>Descripcion:</li>
+          <li>A medida que el proyecto se hace grande querré buscar ciertas cosas.</li>
+          <li>Por ejemplo: ¿cuántas veces en mi proyecto utilizo la palabra color?</li>
+          <li>Para buscar utilizo el comando git grep color y buscará en todo el proyecto los archivos en donde está la palabra color.</li>
+          <li>-- Con git grep -n color saldrá un output el cual dirá en qué línea está lo que estamos buscando.</li>
+          <li>-- Con git grep -c color saldrá un output el cual dirá cuántas veces se repite esa palabra y en qué archivo.</li>
+          <li>-- Si quiero buscar cuántas veces utilizo un atributo de HTML lo hacemos con git grep -c "<p>".</li>
+          <li>-- git grep -n platzi -- en que lineas use la palabra platzi</li>
+          <li>-- git grep -c la -- cuantas veces use la palabra la</li>
+          <li>-- git grep -c “<p>”–> cuantas veces use la etiqueta <p></li>
+          <li>-- git log-S “cabecera” -- cuantas veces use la palabra cabecera en todos los commits.</li>
+          <li>-- grep–> para los archivos</li>
+          <li>-- log -- para los commits.</li>
+          <li>-- Use el git log -S “palabra” no trae el conteo, trae las palabras parecidas a las que estamos buscando.</li>
+          <li>-- Es mejor que uses git log --all --oneline | grep “cabecera”, te trae los commits en donde se encuentra la palabra.</li>
+        </ol>
+      </div> -->
+
+<!-- ________________________________________________________________________________________________ -->
+      <!-- <div class="parrafos">
+        <h1 id="27__">27. Comandos y recursos colaborativos en Git y GitHub</h1>
+        <ol class="parrafo_div">
+          <li>git shortlog -sn : muestra cuantos commit han hecho cada miembros del equipo.</li>
+          <li>-- git shortlog : muestra mensajes de los commits</li>
+          <li>git shortlog -sn --all : muestra cuantos commits hizo cada miembro del equipo, incluso los que han sido eliminado</li>
+          <li>git shortlog -sn --all --no-merge = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges</li>
+          <li>git config --global alias.stats "shortlog -sn --all --no-merges" le estamos diciendo a git que en su config global de mi maquina actual, agregue un alias con nombre "stats" y ese alias almacenara el comando shortlog -sn --all --no-merges  es decir que cuando ejecutemos git stats nos traera los que original mente nos traeria ese comand</li>
+          <li>git blame nombrearchivo = muestra quien hizo cada cosa linea por linea</li>
+          <li>-- git blame -c nombrearchivo  es como el comando de arriba, pero con identacion</li>
+          <li>git nombredelcomando --help = muestra en google como funciona ese comando.</li>
+          <li>git blame nombrearchivo -L35,50= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,53 tambien se le puede agregar el '-c' al final</li>
+          <li>git branch -r = se muestran todas las ramas remotas</li>
+          <li>git branch -a = se muestran todas las ramas tanto locales como remotas</li>
+        </ol>
+      </div>
+    </div>
+
+    <p>Si borro un archivo, y doy git checkout -- . me regresa al ultimo commit guardado</p> -->
+
+  </div>
+</body>
+</html>
