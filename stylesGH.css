@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+
+
 *{
+    font-family: 'Exo 2', sans-serif, cursive;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -17,7 +21,6 @@ body {
 /* H1 Indice _______________________________________ */
 .class_indice {
     font-size: 2.5rem;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-align: center;
     padding: 18px 0 0 0;
     color: rgb(255, 247, 232);
@@ -31,6 +34,7 @@ body {
 }
 
 .indice li {
+    font-size: 1.2em;
     border-bottom: rgba(255, 255, 255, 0.4) 1px solid;
     padding-bottom: 3px;
     list-style: none;
@@ -40,7 +44,6 @@ body {
 }
 
 .indice li a {
-    font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
